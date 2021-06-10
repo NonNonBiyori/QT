@@ -29,6 +29,8 @@ private:
 
 private:
     Ui::VedioPlayer *ui;
+    QVideoWidget    *m_pPlayerWidget;
+    QMediaPlayer    *m_pPlayer;
 };
 
 #endif // VEDIOPLAYER_H

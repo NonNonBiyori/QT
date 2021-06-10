@@ -47,5 +47,8 @@ target_link_libraries(testQT
                       Qt5::Multimedia
                       Qt5::MultimediaWidgets)
 
+target_include_directories(testQT PUBLIC
+                           /home/xujl/Qt5.8.0/5.8/Src/qtmultimedia/include/QtMultimedia
+                          )
 # Add workflow header file
 
