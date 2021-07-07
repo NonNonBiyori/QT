@@ -23,6 +23,8 @@ public:
 
 public slots:
     void slot_choose_vedio();
+    void slot_control_vedio();
+    void slot_get_time_vedio(qint64 time);
 
 private:
     void init();
@@ -31,6 +33,9 @@ private:
     Ui::VedioPlayer *ui;
     QVideoWidget    *m_pPlayerWidget;
     QMediaPlayer    *m_pPlayer;
+
+
+    int64_t         m_duration;
 };
 
 #endif // VEDIOPLAYER_H
