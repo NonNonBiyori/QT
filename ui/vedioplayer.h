@@ -25,6 +25,8 @@ public slots:
     void slot_choose_vedio();
     void slot_control_vedio();
     void slot_get_time_vedio(qint64 time);
+    void slot_set_posion(qint64 time);
+    void slot_slider_drag();
 
 private:
     void init();

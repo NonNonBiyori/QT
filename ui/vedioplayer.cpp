@@ -41,6 +41,8 @@ void VedioPlayer::init()
     connect(ui->pb_vedio_choose,SIGNAL(clicked()),this,SLOT(slot_choose_vedio()));
     connect(ui->pb_vedio_control,SIGNAL(clicked()),this,SLOT(slot_control_vedio()));
     connect(m_pPlayer,SIGNAL(durationChanged(qint64)),this,SLOT(slot_get_time_vedio(qint64)));
+    connect(m_pPlayer,SIGNAL(positionChanged(qint64)),this,SLOT(slot_set_posion(qint64)));
+    connect(ui->horizontalSlider_vedio,SIGNAL(sliderReleased()),this,SLOT(slot_slider_drag()));
 }
 
 void VedioPlayer::slot_choose_vedio()
@@ -72,4 +74,15 @@ void VedioPlayer::slot_get_time_vedio(qint64 time)
     m_duration = m_pPlayer->duration() / 1000;
     std::cout << "duration = " << m_duration << std::endl;
     ui->horizontalSlider_vedio->setRange(0,m_duration);
+}
+
+void VedioPlayer::slot_set_posion(qint64 time)
+{
+    ui->horizontalSlider_vedio->setValue(time / 1000);
+}
+
+void VedioPlayer::slot_slider_drag()
+{
+    int pos = ui->horizontalSlider_vedio->value();
+    m_pPlayer->setPosition(pos * 1000);
 }
