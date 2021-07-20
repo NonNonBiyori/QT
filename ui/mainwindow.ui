@@ -14,18 +14,31 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pb_vedio">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>210</x>
       <y>80</y>
-      <width>93</width>
-      <height>28</height>
+      <width>117</width>
+      <height>58</height>
      </rect>
     </property>
-    <property name="text">
-     <string>player</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pb_vedio">
+       <property name="text">
+        <string>QT_Player</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_openCV">
+       <property name="text">
+        <string>OpenCV_Player</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -34,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>895</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

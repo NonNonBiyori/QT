@@ -6,6 +6,7 @@
 #include <thread>
 #include <chrono>
 #include <QFileDialog>
+#include <opencv2/opencv.hpp>
 #include "vedioplayer.h"
 #include "ui_vedioplayer.h"
 

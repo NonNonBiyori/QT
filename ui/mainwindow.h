@@ -21,6 +21,7 @@ public:
 
 public slots:
     void slot_vedio_player();
+    void slot_opencv_player();
 
 private:
     void init();

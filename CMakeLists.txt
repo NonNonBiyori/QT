@@ -13,8 +13,9 @@ find_package(Qt5Gui ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Sql ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Multimedia ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5MultimediaWidgets ${QT_VERSION_REQ} REQUIRED)
+find_package(OpenCV REQUIRED)
+message("opencv: ${OpenCV_LIBS}" )
 
-message("config types: ${CMAKE_CONFIGURATION_TYPES}")
 set(CMAKE_BUILD_TYPE Debug CACHE STRING "set build type to debug")
 
 FILE(GLOB_RECURSE MOCS "${CMAKE_CURRENT_SOURCE_DIR}/ui/*.h")
@@ -38,17 +39,17 @@ add_executable(testQT
                ${HEADERS_MOC}
                ${FORMS_UIC}
                ${RES_RCC})
-
+link_directories(${OpenCV_LIBRARY_DIRS})
 target_link_libraries(testQT
                       Qt5::Core
                       Qt5::Widgets
                       Qt5::Gui
                       Qt5::Sql
                       Qt5::Multimedia
-                      Qt5::MultimediaWidgets)
+                      Qt5::MultimediaWidgets
+		      ${OpenCV_LIBS})
 
 target_include_directories(testQT PUBLIC
                            /home/xujl/Qt5.8.0/5.8/Src/qtmultimedia/include/QtMultimedia
-                          )
+                          ${OpenCV_INCLUDE_DIRS})
 # Add workflow header file
-
