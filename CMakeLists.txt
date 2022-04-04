@@ -1,8 +1,11 @@
 # The minimum version required to use Qt5 is CMake 2.8.3, but 2.8.11 is recommended.
 cmake_minimum_required(VERSION 2.8.11)
 
-set(QT_INSTALL_PATH "/home/xujl/Qt5.8.0/5.8/gcc_64")
+set(QT_INSTALL_PATH "D:/Qt/Qt5.12.12/5.12.12/msvc2017_64")
+#set(QT_INSTALL_PATH "D:/qt5.5.0/qtbase/bin")
+set(OpenCV_DIR "E:/study/opencv/opencv-4.5.5/build")
 message("qt: ${QT_INSTALL_PATH}" )
+message("qt: ${QT_DIR_PATH}" )
 project(testQT)
 
 set(CMAKE_PREFIX_PATH ${QT_INSTALL_PATH})
@@ -13,8 +16,10 @@ find_package(Qt5Gui ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Sql ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Multimedia ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5MultimediaWidgets ${QT_VERSION_REQ} REQUIRED)
+message("qt: ${QT_VERSION_REQ}" )
 find_package(OpenCV REQUIRED)
 message("opencv: ${OpenCV_LIBS}" )
+#message("qt: ${QT_INSTALL_PATH}" )
 
 set(CMAKE_BUILD_TYPE Debug CACHE STRING "set build type to debug")
 
