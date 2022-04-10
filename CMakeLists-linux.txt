@@ -4,9 +4,9 @@ cmake_minimum_required(VERSION 2.8.11)
 set(QT_INSTALL_PATH "D:/Qt/Qt5.12.12/5.12.12/msvc2017_64")
 #set(QT_INSTALL_PATH "D:/qt5.5.0/qtbase/bin")
 set(OpenCV_DIR "E:/study/opencv/opencv-4.5.5/build")
-#message("qt: ${QT_INSTALL_PATH}" )
-#message("qt: ${QT_DIR_PATH}" )
-project(mediaPlayer)
+message("qt: ${QT_INSTALL_PATH}" )
+message("qt: ${QT_DIR_PATH}" )
+project(testQT)
 
 set(CMAKE_PREFIX_PATH ${QT_INSTALL_PATH})
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -16,9 +16,9 @@ find_package(Qt5Gui ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Sql ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5Multimedia ${QT_VERSION_REQ} REQUIRED)
 find_package(Qt5MultimediaWidgets ${QT_VERSION_REQ} REQUIRED)
-#message("qt: ${QT_VERSION_REQ}" )
+message("qt: ${QT_VERSION_REQ}" )
 find_package(OpenCV REQUIRED)
-#message("opencv: ${OpenCV_LIBS}" )
+message("opencv: ${OpenCV_LIBS}" )
 #message("qt: ${QT_INSTALL_PATH}" )
 
 set(CMAKE_BUILD_TYPE Debug CACHE STRING "set build type to debug")
@@ -39,29 +39,13 @@ QT5_ADD_RESOURCES(RES_RCC ${RES})
 
 SOURCE_GROUP("Generated Files" FILES ${HEADERS_MOC} ${FORMS_UIC})
 
-file(GLOB_RECURSE workflow_include "${CMAKE_CURRENT_SOURCE_DIR}/workflow/include/*.h")
-file(GLOB_RECURSE INC "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
-
-file(GLOB_RECURSE workflow_src "${CMAKE_CURRENT_SOURCE_DIR}/workflow/src/*.c*")
-
-set(SOURCE_FILES
-    ${workflow_include}
-    ${workflow_src}
-   )
-#add_executable(demo demo.cpp) # 生成可执行文件
-#add_library(common STATIC util.cpp) # 生成静态库
-#add_library(common SHARED util.cpp) # 生成动态库或共享库
-
-add_executable(mediaPlayer
+add_executable(testQT
                ${SRC}
-			   ${INC}
                ${HEADERS_MOC}
                ${FORMS_UIC}
-               ${RES_RCC}
-			   ${MOCS}
-			   ${SOURCE_FILES})
+               ${RES_RCC})
 link_directories(${OpenCV_LIBRARY_DIRS})
-target_link_libraries(mediaPlayer
+target_link_libraries(testQT
                       Qt5::Core
                       Qt5::Widgets
                       Qt5::Gui
@@ -70,8 +54,7 @@ target_link_libraries(mediaPlayer
                       Qt5::MultimediaWidgets
 		      ${OpenCV_LIBS})
 
-target_include_directories(mediaPlayer PUBLIC
+target_include_directories(testQT PUBLIC
                            /home/xujl/Qt5.8.0/5.8/Src/qtmultimedia/include/QtMultimedia
-                          ${OpenCV_INCLUDE_DIRS}
-						  ${CMAKE_SOURCE_DIR}/workflow/include)
+                          ${OpenCV_INCLUDE_DIRS})
 # Add workflow header file
