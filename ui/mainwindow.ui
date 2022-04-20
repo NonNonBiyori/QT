@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1194</width>
-    <height>817</height>
+    <width>1499</width>
+    <height>895</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,79 +17,41 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
-     <widget class="QPushButton" name="pb_vedio">
-      <property name="text">
-       <string>QT_视频</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pb_openCV">
-      <property name="text">
-       <string>OpenCV_视频</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pb_openCV_JPEG">
-      <property name="text">
-       <string>OpenCV_图片</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QSplitter" name="splitter">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <widget class="QStackedWidget" name="stackedWidge_main">
-       <property name="currentIndex">
-        <number>1</number>
-       </property>
-       <widget class="QWidget" name="page_qt_video"/>
-       <widget class="QWidget" name="page_opencv_jpeg">
-        <widget class="QLabel" name="label_opencv_jpeg">
-         <property name="geometry">
-          <rect>
-           <x>182</x>
-           <y>254</y>
-           <width>81</width>
-           <height>171</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>1</string>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
        <layout class="QVBoxLayout" name="verticalLayout">
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <property name="rightMargin">
-         <number>10</number>
-        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPushButton" name="pb_open">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="text">
              <string>选择</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer">
+           <widget class="QPushButton" name="pb_vedio">
+            <property name="text">
+             <string>QT_视频</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -104,7 +66,57 @@
          </layout>
         </item>
         <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pb_openCV">
+            <property name="text">
+             <string>OpenCV_视频</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_openCV_JPEG">
+            <property name="text">
+             <string>OpenCV_图片</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QSplitter" name="splitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
          <widget class="QTreeWidget" name="treeWidget_files">
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <attribute name="headerVisible">
            <bool>false</bool>
           </attribute>
@@ -114,10 +126,65 @@
            </property>
           </column>
          </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
+         <widget class="QStackedWidget" name="stackedWidge_main">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_qt_video"/>
+          <widget class="QWidget" name="page_opencv_jpeg">
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_opencv_jpeg">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>300</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="3" column="0">
+           <widget class="QPushButton" name="pb_opencv_image_small">
+            <property name="text">
+             <string>缩小</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pb_opencv_image_big">
+            <property name="text">
+             <string>放大</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pb_opencv_image_pre">
+            <property name="text">
+             <string>上一张</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QPushButton" name="pb_opencv_image_post">
+            <property name="text">
+             <string>下一张</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -126,7 +193,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1194</width>
+     <width>1499</width>
      <height>23</height>
     </rect>
    </property>
